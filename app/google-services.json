@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "348503309719",
+    "project_id": "projecthackhaton",
+    "storage_bucket": "projecthackhaton.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348503309719:android:840f7a1ebb7896d31018d2",
+        "android_client_info": {
+          "package_name": "com.cryptoapp.project_cryptoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAE0TeaFYefIDwYoqxtlMtGI-Hzm66Yd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
