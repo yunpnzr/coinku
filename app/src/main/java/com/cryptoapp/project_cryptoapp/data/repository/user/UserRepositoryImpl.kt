@@ -6,17 +6,17 @@ import com.cryptoapp.project_cryptoapp.utils.ResultWrapper
 import com.cryptoapp.project_cryptoapp.utils.proceedFlow
 import kotlinx.coroutines.flow.Flow
 
-class UserRepositoryImpl(private val dataSource: AuthDataSource): UserRepository {
-    override suspend fun doLogin(
+class UserRepositoryImpl(private val dataSource: AuthDataSource) : UserRepository {
+    override fun doLogin(
         email: String,
-        password: String
+        password: String,
     ): Flow<ResultWrapper<Boolean>> {
         return proceedFlow {
             dataSource.doLogin(email, password)
         }
     }
 
-    override suspend fun doRegister(
+    override fun doRegister(
         name: String,
         email: String,
         password: String,
@@ -26,13 +26,13 @@ class UserRepositoryImpl(private val dataSource: AuthDataSource): UserRepository
         }
     }
 
-    override suspend fun updateProfile(name: String?): Flow<ResultWrapper<Boolean>> {
+    override fun updateProfile(name: String?): Flow<ResultWrapper<Boolean>> {
         return proceedFlow {
             dataSource.updateProfile(name)
         }
     }
 
-    override suspend fun updatePassword(newPassword: String): Flow<ResultWrapper<Boolean>> {
+    override fun updatePassword(newPassword: String): Flow<ResultWrapper<Boolean>> {
         return proceedFlow {
             dataSource.updatePassword(newPassword)
         }

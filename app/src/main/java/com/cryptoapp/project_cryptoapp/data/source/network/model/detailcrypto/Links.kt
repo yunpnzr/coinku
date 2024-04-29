@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -29,5 +28,5 @@ data class Links(
     @SerializedName("twitter_screen_name")
     val twitterScreenName: String?,
     @SerializedName("whitepaper")
-    val whitepaper: String?
+    val whitepaper: String?,
 )

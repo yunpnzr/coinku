@@ -27,7 +27,7 @@ fun ListCryptoResponseItem?.toCrypto() =
         priceChangePercentage24h = this?.priceChangePercentage24h ?: 0.0,
         symbol = this?.symbol.orEmpty(),
         totalSupply = this?.totalSupply ?: 0.0,
-        totalVolume = this?.totalVolume ?: 0L
+        totalVolume = this?.totalVolume ?: 0L,
     )
 
 fun Collection<ListCryptoResponseItem>?.toCryptos() = this?.map { it.toCrypto() } ?: listOf()

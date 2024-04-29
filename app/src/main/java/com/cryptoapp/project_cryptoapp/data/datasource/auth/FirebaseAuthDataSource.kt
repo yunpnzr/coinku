@@ -1,15 +1,22 @@
 package com.cryptoapp.project_cryptoapp.data.datasource.auth
 
+import com.cryptoapp.project_cryptoapp.data.mapper.toUser
 import com.cryptoapp.project_cryptoapp.data.model.User
-import com.cryptoapp.project_cryptoapp.data.model.toUser
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServices
 
-class FirebaseAuthDataSource(private val services: FirebaseServices): AuthDataSource {
-    override suspend fun doLogin(email: String, password: String): Boolean {
+class FirebaseAuthDataSource(private val services: FirebaseServices) : AuthDataSource {
+    override suspend fun doLogin(
+        email: String,
+        password: String,
+    ): Boolean {
         return services.doLogin(email, password)
     }
 
-    override suspend fun doRegister(name: String, email: String, password: String): Boolean {
+    override suspend fun doRegister(
+        name: String,
+        email: String,
+        password: String,
+    ): Boolean {
         return services.doRegister(name, email, password)
     }
 
@@ -36,5 +43,4 @@ class FirebaseAuthDataSource(private val services: FirebaseServices): AuthDataSo
     override fun getCurrentUser(): User? {
         return services.getCurrentUser().toUser()
     }
-
 }

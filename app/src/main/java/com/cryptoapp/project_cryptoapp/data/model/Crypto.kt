@@ -29,5 +29,5 @@ data class Crypto(
     var priceChangePercentage24h: Double,
     var symbol: String,
     var totalSupply: Double,
-    var totalVolume: Long
-): Parcelable
+    var totalVolume: Long,
+) : Parcelable

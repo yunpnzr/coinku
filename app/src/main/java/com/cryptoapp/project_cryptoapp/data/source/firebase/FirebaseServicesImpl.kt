@@ -7,14 +7,20 @@ import com.google.firebase.auth.auth
 import com.google.firebase.auth.userProfileChangeRequest
 import kotlinx.coroutines.tasks.await
 
-class FirebaseServicesImpl(private val firebaseAuth: FirebaseAuth): FirebaseServices{
-
-    override suspend fun doLogin(email: String, password: String): Boolean {
+class FirebaseServicesImpl(private val firebaseAuth: FirebaseAuth) : FirebaseServices {
+    override suspend fun doLogin(
+        email: String,
+        password: String,
+    ): Boolean {
         val loginResult = firebaseAuth.signInWithEmailAndPassword(email, password).await()
         return loginResult.user != null
     }
 
-    override suspend fun doRegister(name: String, email: String, password: String): Boolean {
+    override suspend fun doRegister(
+        name: String,
+        email: String,
+        password: String,
+    ): Boolean {
         val registerResult = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
         registerResult.user?.updateProfile(
             userProfileChangeRequest {
@@ -57,5 +63,4 @@ class FirebaseServicesImpl(private val firebaseAuth: FirebaseAuth): FirebaseServ
     override fun getCurrentUser(): FirebaseUser? {
         return firebaseAuth.currentUser
     }
-
 }

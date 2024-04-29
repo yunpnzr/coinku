@@ -6,21 +6,21 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
     @Throws(exceptionClasses = [Exception::class])
-    suspend fun doLogin(
+    fun doLogin(
         email: String,
         password: String,
     ): Flow<ResultWrapper<Boolean>>
 
     @Throws(exceptionClasses = [Exception::class])
-    suspend fun doRegister(
+    fun doRegister(
         name: String,
         email: String,
         password: String,
     ): Flow<ResultWrapper<Boolean>>
 
-    suspend fun updateProfile(name: String? = null): Flow<ResultWrapper<Boolean>>
+    fun updateProfile(name: String? = null): Flow<ResultWrapper<Boolean>>
 
-    suspend fun updatePassword(newPassword: String): Flow<ResultWrapper<Boolean>>
+    fun updatePassword(newPassword: String): Flow<ResultWrapper<Boolean>>
 
     fun requestChangePasswordByEmail(): Boolean
 

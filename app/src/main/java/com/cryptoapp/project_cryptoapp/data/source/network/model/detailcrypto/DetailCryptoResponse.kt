@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -63,5 +62,5 @@ data class DetailCryptoResponse(
     @SerializedName("watchlist_portfolio_users")
     val watchlistPortfolioUsers: Int?,
     @SerializedName("web_slug")
-    val webSlug: String?
+    val webSlug: String?,
 )

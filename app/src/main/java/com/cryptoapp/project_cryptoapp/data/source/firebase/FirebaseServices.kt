@@ -2,13 +2,19 @@ package com.cryptoapp.project_cryptoapp.data.source.firebase
 
 import com.google.firebase.auth.FirebaseUser
 
-interface FirebaseServices{
+interface FirebaseServices {
+    @Throws(exceptionClasses = [Exception::class])
+    suspend fun doLogin(
+        email: String,
+        password: String,
+    ): Boolean
 
     @Throws(exceptionClasses = [Exception::class])
-    suspend fun doLogin(email: String, password: String): Boolean
-
-    @Throws(exceptionClasses = [Exception::class])
-    suspend fun doRegister(name: String, email: String, password: String): Boolean
+    suspend fun doRegister(
+        name: String,
+        email: String,
+        password: String,
+    ): Boolean
 
     suspend fun updateProfile(name: String? = null): Boolean
 

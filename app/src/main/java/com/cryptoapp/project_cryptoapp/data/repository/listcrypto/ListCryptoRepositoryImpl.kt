@@ -7,7 +7,7 @@ import com.cryptoapp.project_cryptoapp.utils.ResultWrapper
 import com.cryptoapp.project_cryptoapp.utils.proceedFlow
 import kotlinx.coroutines.flow.Flow
 
-class ListCryptoRepositoryImpl(private val dataSource: ListCryptoDataSource): ListCryptoRepository {
+class ListCryptoRepositoryImpl(private val dataSource: ListCryptoDataSource) : ListCryptoRepository {
     override fun getListCrypto(vsCurrency: String): Flow<ResultWrapper<List<Crypto>>> {
         return proceedFlow {
             dataSource.getListCrypto(vsCurrency).toCryptos()
