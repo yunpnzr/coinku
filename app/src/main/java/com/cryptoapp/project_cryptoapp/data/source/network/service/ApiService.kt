@@ -13,21 +13,19 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
-interface ApiService{
-
+interface ApiService {
     @Headers("Authorization: token ${BuildConfig.KEY}")
-
     @GET("markets")
     suspend fun getCrypto(
-        @Query("vs_currency") vsCurrency: String
+        @Query("vs_currency") vsCurrency: String,
     ): ListCryptoResponse
 
     @GET("{id}")
     suspend fun getDetail(
-        @Path("username") username: String
+        @Path("username") username: String,
     ): DetailCryptoResponse
 
-    companion object{
+    companion object {
         @JvmStatic
         operator fun invoke(): ApiService {
             val levelInterceptor = HttpLoggingInterceptor.Level.BODY
@@ -47,5 +45,4 @@ interface ApiService{
             return retrofit.create(ApiService::class.java)
         }
     }
-
 }

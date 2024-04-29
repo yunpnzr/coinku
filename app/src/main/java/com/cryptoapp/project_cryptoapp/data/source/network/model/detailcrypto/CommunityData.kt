@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -19,5 +18,5 @@ data class CommunityData(
     @SerializedName("telegram_channel_user_count")
     val telegramChannelUserCount: Any?,
     @SerializedName("twitter_followers")
-    val twitterFollowers: Int?
+    val twitterFollowers: Int?,
 )

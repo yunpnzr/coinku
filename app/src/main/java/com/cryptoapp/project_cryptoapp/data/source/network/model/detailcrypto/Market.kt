@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -11,5 +10,5 @@ data class Market(
     @SerializedName("identifier")
     val identifier: String?,
     @SerializedName("name")
-    val name: String?
+    val name: String?,
 )

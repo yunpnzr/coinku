@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -11,5 +10,5 @@ data class ConvertedLast(
     @SerializedName("eth")
     val eth: Double?,
     @SerializedName("usd")
-    val usd: Int?
+    val usd: Int?,
 )

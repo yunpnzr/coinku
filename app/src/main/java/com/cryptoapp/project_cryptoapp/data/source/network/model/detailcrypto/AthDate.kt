@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -129,5 +128,5 @@ data class AthDate(
     @SerializedName("yfi")
     val yfi: String?,
     @SerializedName("zar")
-    val zar: String?
+    val zar: String?,
 )

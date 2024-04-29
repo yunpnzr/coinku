@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.listcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -57,5 +56,5 @@ data class ListCryptoResponseItem(
     @SerializedName("total_supply")
     val totalSupply: Double?,
     @SerializedName("total_volume")
-    val totalVolume: Long?
+    val totalVolume: Long?,
 )

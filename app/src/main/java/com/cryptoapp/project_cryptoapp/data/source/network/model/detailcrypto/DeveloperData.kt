@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -25,5 +24,5 @@ data class DeveloperData(
     @SerializedName("subscribers")
     val subscribers: Int?,
     @SerializedName("total_issues")
-    val totalIssues: Int?
+    val totalIssues: Int?,
 )

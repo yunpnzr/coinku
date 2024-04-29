@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -129,5 +128,5 @@ data class MarketCapChangePercentage24hInCurrency(
     @SerializedName("yfi")
     val yfi: Double?,
     @SerializedName("zar")
-    val zar: Double?
+    val zar: Double?,
 )

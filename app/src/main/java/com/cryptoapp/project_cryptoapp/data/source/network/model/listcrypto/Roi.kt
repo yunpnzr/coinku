@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.listcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -11,5 +10,5 @@ data class Roi(
     @SerializedName("percentage")
     val percentage: Double?,
     @SerializedName("times")
-    val times: Double?
+    val times: Double?,
 )

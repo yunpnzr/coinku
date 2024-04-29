@@ -1,6 +1,5 @@
 package com.cryptoapp.project_cryptoapp.data.source.network.model.detailcrypto
 
-
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
@@ -91,5 +90,5 @@ data class MarketData(
     @SerializedName("total_value_locked")
     val totalValueLocked: Any?,
     @SerializedName("total_volume")
-    val totalVolume: TotalVolume?
+    val totalVolume: TotalVolume?,
 )

@@ -3,7 +3,6 @@ package com.cryptoapp.project_cryptoapp.data.datasource.auth
 import com.cryptoapp.project_cryptoapp.data.model.User
 
 interface AuthDataSource {
-
     @Throws(exceptionClasses = [Exception::class])
     suspend fun doLogin(
         email: String,
