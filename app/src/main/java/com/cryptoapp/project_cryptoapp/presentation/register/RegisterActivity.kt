@@ -3,7 +3,7 @@ package com.cryptoapp.project_cryptoapp.presentation.register
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.cryptoapp.project_cryptoapp.R
@@ -31,6 +31,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.layoutInputRegister.btnRegister.setOnClickListener {
             doRegister()
         }
+
         binding.layoutInputRegister.tvHaveAccount.setOnClickListener {
             navigateToLogin()
         }
@@ -63,11 +64,12 @@ class RegisterActivity : AppCompatActivity() {
                 doOnSuccess = {
                     binding.layoutInputRegister.pbRegister.isVisible = false
                     binding.layoutInputRegister.btnRegister.isEnabled = true
-                    Toast.makeText(
-                        this,
-                        getString(R.string.register_success),
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                    val dialog =
+                        AlertDialog.Builder(this).setMessage(getString(R.string.registration_success))
+                            .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                                navigateToLogin()
+                            }
+                    dialog.show()
                 },
                 doOnLoading = {
                     binding.layoutInputRegister.pbRegister.isVisible = true
@@ -76,11 +78,11 @@ class RegisterActivity : AppCompatActivity() {
                 doOnError = {
                     binding.layoutInputRegister.pbRegister.isVisible = false
                     binding.layoutInputRegister.btnRegister.isEnabled = true
-                    Toast.makeText(
-                        this,
-                        getString(R.string.register_failed),
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                    val dialog =
+                        AlertDialog.Builder(this).setMessage(getString(R.string.registration_failed))
+                            .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                            }
+                    dialog.show()
                 },
             )
         }
