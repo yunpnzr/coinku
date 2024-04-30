@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Crypto App</string>
+    <string name="title_register">Register Now</string>
+    <string name="hint_name_register">Name</string>
+    <string name="hint_email_register">Email</string>
+    <string name="hint_password_register">Password</string>
+    <string name="hint_confirm_password_register">Confirm your password</string>
+    <string name="password_not_same">Password not same</string>
+    <string name="password_not_empty">Password not empty</string>
+    <string name="password_under_character">Password under character</string>
+    <string name="email_is_empty">Email is empty</string>
+    <string name="email_invalid">Email invalid</string>
+    <string name="name_is_empty">Name is empty</string>
+    <string name="register_success">Register success!</string>
+    <string name="register_failed">Register failed</string>
 </resources>

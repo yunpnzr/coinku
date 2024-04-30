@@ -5,6 +5,4 @@ import com.cryptoapp.project_cryptoapp.data.repository.listcrypto.ListCryptoRepo
 
 class MainViewModel(
     private val listCryptoRepository: ListCryptoRepository,
-) : ViewModel() {
-
-}
+) : ViewModel()
