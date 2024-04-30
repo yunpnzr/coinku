@@ -27,4 +27,10 @@
     <string name="name_is_empty">Name is empty</string>
     <string name="register_success">Register success!</string>
     <string name="register_failed">Register failed</string>
+    <string name="btn_register">Register</string>
+    <string name="have_account">Have account?</string>
+    <string name="navigate_login">Login</string>
+    <string name="registration_failed">Registration failed!</string>
+    <string name="registration_success">Registration success!</string>
+    <string name="yes">Yes</string>
 </resources>
