@@ -11,6 +11,7 @@ import com.cryptoapp.project_cryptoapp.data.repository.user.UserRepositoryImpl
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServices
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServicesImpl
 import com.cryptoapp.project_cryptoapp.data.source.network.service.ApiService
+import com.cryptoapp.project_cryptoapp.presentation.login.LoginViewModel
 import com.cryptoapp.project_cryptoapp.presentation.main.MainViewModel
 import com.cryptoapp.project_cryptoapp.presentation.register.RegisterViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -63,6 +64,9 @@ object AppModule {
             }
             viewModel {
                 RegisterViewModel(get())
+            }
+            viewModel {
+                LoginViewModel(get())
             }
         }
 

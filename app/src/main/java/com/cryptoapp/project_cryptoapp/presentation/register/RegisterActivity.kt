@@ -1,5 +1,6 @@
 package com.cryptoapp.project_cryptoapp.presentation.register
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.ActivityRegisterBinding
+import com.cryptoapp.project_cryptoapp.presentation.login.LoginActivity
 import com.cryptoapp.project_cryptoapp.utils.proceedWhen
 import com.google.android.material.textfield.TextInputLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +37,11 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun navigateToLogin() {
-        TODO("Not yet implemented")
+        startActivity(
+            Intent(this, LoginActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            },
+        )
     }
 
     private fun doRegister() {
