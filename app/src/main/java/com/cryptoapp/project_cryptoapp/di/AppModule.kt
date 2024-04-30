@@ -12,6 +12,7 @@ import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServices
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServicesImpl
 import com.cryptoapp.project_cryptoapp.data.source.network.service.ApiService
 import com.cryptoapp.project_cryptoapp.presentation.main.MainViewModel
+import com.cryptoapp.project_cryptoapp.presentation.register.RegisterViewModel
 import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
@@ -59,6 +60,9 @@ object AppModule {
         module {
             viewModel {
                 MainViewModel(get())
+            }
+            viewModel {
+                RegisterViewModel(get())
             }
         }
 
