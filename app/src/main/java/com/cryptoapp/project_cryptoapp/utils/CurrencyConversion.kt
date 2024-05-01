@@ -10,7 +10,7 @@ fun Double?.doubleToCurrency(
     return try {
         val localeID = Locale(language, country)
         val numberFormat = NumberFormat.getCurrencyInstance(localeID)
-        numberFormat.format(this).toString().replace("Rp", "")
+        numberFormat.format(this).toString().replace("Rp", "Rp ")
     } catch (e: Exception) {
         null
     }
