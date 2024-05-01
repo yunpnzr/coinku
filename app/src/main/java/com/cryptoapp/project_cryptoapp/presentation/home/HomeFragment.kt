@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.data.model.Crypto
@@ -59,13 +61,22 @@ class HomeFragment : Fragment() {
         homeViewModel.getListCrypto(vsCurrency).observe(viewLifecycleOwner) { crypto ->
             crypto.proceedWhen(
                 doOnSuccess = {
+                    binding.layoutState.root.isVisible = false
+                    binding.layoutState.pbLoading.isVisible = false
                     crypto.payload?.let { data ->
                         bindListCrypto(data)
                     }
                 },
                 doOnError = {
-                    // handle error
-                    Log.e("Daud - Error Binding Data", it.message.toString())
+                    Log.e("Error Binding List Crypto", it.message.toString())
+                    binding.layoutState.root.isVisible = false
+                    binding.layoutState.pbLoading.isVisible = false
+                    Toast.makeText(requireContext(), "Failed Bind List Crypto", Toast.LENGTH_SHORT)
+                        .show()
+                },
+                doOnLoading = {
+                    binding.layoutState.root.isVisible = true
+                    binding.layoutState.pbLoading.isVisible = true
                 },
             )
         }
