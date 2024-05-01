@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.data.model.Crypto
 import com.cryptoapp.project_cryptoapp.databinding.FragmentHomeBinding
+import com.cryptoapp.project_cryptoapp.presentation.detailcrypto.DetailCryptoActivity
 import com.cryptoapp.project_cryptoapp.presentation.home.adapter.CryptoAdapter
 import com.cryptoapp.project_cryptoapp.utils.proceedWhen
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
 
     private val cryptoAdapter: CryptoAdapter by lazy {
         CryptoAdapter {
-            navigateToDetail(it)
+            it.id?.let { it1 -> navigateToDetail(it1) }
         }
     }
 
@@ -86,7 +87,7 @@ class HomeFragment : Fragment() {
         cryptoAdapter.submitData(data)
     }
 
-    private fun navigateToDetail(item: Crypto) {
-//        DetailMenuActivity.startActivity(requireContext(), item)
+    private fun navigateToDetail(id: String) {
+        DetailCryptoActivity.startActivity(requireContext(), id)
     }
 }

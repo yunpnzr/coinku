@@ -42,4 +42,10 @@
     <string name="registration_failed">Registration failed!</string>
     <string name="registration_success">Registration success!</string>
     <string name="yes">Yes</string>
+    <string name="desc_iv_icon_back">image for iv_coin_back</string>
+    <string name="text_button_to_coingecko">Open In CoinGecko</string>
+    <string name="desc_iv_coin_image">image for iv_coin_image</string>
+    <string name="text_coin_name">Crypto Name</string>
+    <string name="text_coin_price">10000.0</string>
+    <string name="desc_iv_favorite">icon star iv_favorite</string>
 </resources>
