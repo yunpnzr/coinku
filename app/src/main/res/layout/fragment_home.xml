@@ -46,6 +46,7 @@
                 android:nestedScrollingEnabled="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_catalogue_header"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/card_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

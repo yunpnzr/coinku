@@ -21,7 +21,7 @@ class CryptoViewHolder(
                 crossfade(true)
             }
             binding.tvCoinName.text = it.name
-            binding.tvCoinAbbreviation.text = it.symbol
+            binding.tvCoinAbbreviation.text = it.symbol.uppercase()
             binding.tvCoinPrice.text = it.currentPrice.toIndonesianFormat()
 
             itemView.setOnClickListener {
