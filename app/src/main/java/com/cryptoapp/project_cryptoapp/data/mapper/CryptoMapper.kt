@@ -5,6 +5,7 @@ import com.cryptoapp.project_cryptoapp.data.source.network.model.listcrypto.List
 
 fun ListCryptoResponseItem?.toCrypto() =
     Crypto(
+        id = this?.id.orEmpty(),
         currentPrice = this?.currentPrice ?: 0.0,
         image = this?.image.orEmpty(),
         name = this?.name.orEmpty(),

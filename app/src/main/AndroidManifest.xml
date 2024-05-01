@@ -25,6 +25,8 @@
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="false" />
+        <activity android:name=".presentation.detailcrypto.DetailCryptoActivity"
+            android:exported="false"/>
         <activity
             android:name=".presentation.register.RegisterActivity"
             android:exported="true">

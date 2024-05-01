@@ -22,7 +22,7 @@ interface ApiService {
 
     @GET("{id}")
     suspend fun getDetail(
-        @Path("username") username: String,
+        @Path("id") id: String,
     ): DetailCryptoResponse
 
     companion object {
