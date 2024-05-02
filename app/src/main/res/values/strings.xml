@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Crypto App</string>
+    <string name="app_name">CoinKu</string>
     <string name="title_tab_home">Home</string>
     <string name="title_tab_profile">Profile</string>
     <string name="title_tab_favorite">Favorite</string>
@@ -50,6 +50,7 @@
     <string name="text_coin_name">Crypto Name</string>
     <string name="text_coin_price">10000.0</string>
     <string name="desc_iv_favorite">icon star iv_favorite</string>
+    <string name="please_check_your_email_for_reset_your_password">Please check your email for reset your password</string>
     <string name="text_confirm_reset">Do you want to reset your password?</string>
     <string name="text_cancel">Cancel</string>
     <string name="text_reset">Okay</string>

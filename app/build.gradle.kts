@@ -118,6 +118,10 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.crashlytics)
 
+    //local
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
     // network
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
@@ -129,4 +133,7 @@ dependencies {
 
     // di koin
     implementation(libs.koin.android)
+
+    // app intro
+    implementation(libs.app.intro)
 }

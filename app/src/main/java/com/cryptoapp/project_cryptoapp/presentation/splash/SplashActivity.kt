@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.cryptoapp.project_cryptoapp.databinding.ActivitySplashBinding
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginActivity
-import com.cryptoapp.project_cryptoapp.presentation.main.MainActivity
+import com.cryptoapp.project_cryptoapp.presentation.onboarding.OnboardingActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -44,7 +44,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigateToMain() {
         startActivity(
-            Intent(this, MainActivity::class.java).apply {
+            Intent(this, OnboardingActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             },
         )
