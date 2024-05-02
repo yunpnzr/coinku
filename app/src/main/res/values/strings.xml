@@ -2,10 +2,12 @@
     <string name="app_name">Crypto App</string>
     <string name="title_tab_home">Home</string>
     <string name="title_tab_profile">Profile</string>
+    <string name="title_tab_favorite">Favorite</string>
     <string name="placeholder_banner_title">Banner Title</string>
     <string name="placeholder_banner_description">Banner Description</string>
     <string name="invest_today">Invest Today</string>
     <string name="trending_coins">Trending Coins</string>
+    <string name="favorite_coins">Favorite Coins</string>
     <string name="placeholder_coin_name">Coin Name</string>
     <string name="placeholder_coin_abbreviation">Coin Abbreviation</string>
     <string name="hi_username">Hi, %1$s!</string>
@@ -55,5 +57,4 @@
     <string name="text_send_request_to_your_email">Send Request to Your Email</string>
     <string name="text_enter_the_email">Enter the email to change your password</string>
     <string name="text_send">Send</string>
-    <string name="text_login_failed">Login Gagal \n Silahkan Coba Lagi</string>
 </resources>
