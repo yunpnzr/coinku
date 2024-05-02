@@ -3,16 +3,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_onboarding">
+    android:background="@drawable/bg_onboarding_three">
 
-    <TextView
-        android:id="@+id/tv_title_onboarding_three"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="On boarding three"
+    <ImageView
+        android:id="@+id/iv_icon_onboarding_three"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img_icon"
+        app:layout_constraintBottom_toTopOf="@+id/iv_onboarding_three"
+        app:layout_constraintEnd_toEndOf="@+id/iv_onboarding_three"
+        app:layout_constraintStart_toStartOf="@+id/iv_onboarding_three" />
+
+    <ImageView
+        android:id="@+id/iv_onboarding_three"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img_onboarding_three"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_onboarding_three"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="What are you waiting for? Let's join us!"
+        android:textAlignment="center"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="32dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_onboarding_three" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

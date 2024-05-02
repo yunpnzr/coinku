@@ -5,13 +5,13 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginActivity
+import com.cryptoapp.project_cryptoapp.presentation.main.MainActivity
 import com.github.appintro.AppIntro
 import com.github.appintro.AppIntroCustomLayoutFragment
 import com.github.appintro.AppIntroPageTransformerType
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class OnboardingActivity : AppIntro() {
-
     private val onboardingViewModel: OnboardingViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,7 @@ class OnboardingActivity : AppIntro() {
         setTransformerOnboarding()
         setImmersiveMode()
         isWizardMode = true
-        //onboardingViewModel.setFirstRun(true)
+        // onboardingViewModel.setFirstRun(true)
     }
 
     private fun slidePage() {
@@ -66,12 +66,31 @@ class OnboardingActivity : AppIntro() {
 
     public override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
-        navigateToLogin()
+        // navigateToLogin()
+        checkAuth()
     }
 
     public override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
-        navigateToLogin()
+        // navigateToLogin()
+        checkAuth()
+    }
+
+    private fun checkAuth() {
+        if (onboardingViewModel.isLogin())
+            {
+                navigateToMain()
+            } else {
+            navigateToLogin()
+        }
+    }
+
+    private fun navigateToMain() {
+        startActivity(
+            Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            },
+        )
     }
 
     private fun navigateToLogin() {

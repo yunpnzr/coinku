@@ -4,16 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_onboarding">
+    android:background="#F37135">
+
+    <ImageView
+        android:id="@+id/iv_onboarding_one"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img_onboarding_one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_title_onboarding_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="On boarding one"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="24sp"
+        android:layout_marginBottom="128dp"
+        android:text="Welcome to CoinKu! 🎉"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/iv_onboarding_one"
+        app:layout_constraintEnd_toEndOf="@+id/iv_onboarding_one"
+        app:layout_constraintStart_toStartOf="@+id/iv_onboarding_one" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
