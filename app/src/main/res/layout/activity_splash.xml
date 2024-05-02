@@ -7,4 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".presentation.splash.SplashActivity">
 
+    <ImageView
+        android:layout_width="229dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="120dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/img_logo_splash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_splash" />
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
