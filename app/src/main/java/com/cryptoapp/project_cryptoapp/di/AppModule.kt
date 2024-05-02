@@ -19,6 +19,8 @@ import com.cryptoapp.project_cryptoapp.data.repository.user.UserRepository
 import com.cryptoapp.project_cryptoapp.data.repository.user.UserRepositoryImpl
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServices
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServicesImpl
+import com.cryptoapp.project_cryptoapp.data.source.local.database.AppDatabase
+import com.cryptoapp.project_cryptoapp.data.source.local.database.dao.FavoriteDao
 import com.cryptoapp.project_cryptoapp.data.source.local.pref.UserPreference
 import com.cryptoapp.project_cryptoapp.data.source.local.pref.UserPreferenceImpl
 import com.cryptoapp.project_cryptoapp.data.source.network.service.ApiService
@@ -56,6 +58,14 @@ object AppModule {
             single<FirebaseServices> {
                 FirebaseServicesImpl(get())
             }
+        }
+
+    private val localModule =
+        module {
+            single<AppDatabase> {
+                AppDatabase.createInstance(androidContext())
+            }
+            single<FavoriteDao> { get<AppDatabase>().favoriteDao() }
         }
 
     private val prefModule =
@@ -123,6 +133,7 @@ object AppModule {
         listOf<Module>(
             networkModule,
             prefModule,
+            localModule,
             firebaseModule,
             dataSourceModule,
             repositoryModule,
