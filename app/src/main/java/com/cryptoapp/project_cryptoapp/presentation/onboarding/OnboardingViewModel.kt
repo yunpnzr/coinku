@@ -1,14 +1,11 @@
-package com.cryptoapp.project_cryptoapp.presentation.splash
+package com.cryptoapp.project_cryptoapp.presentation.onboarding
 
 import androidx.lifecycle.ViewModel
 import com.cryptoapp.project_cryptoapp.data.repository.pref.PrefRepository
-import com.cryptoapp.project_cryptoapp.data.repository.user.UserRepository
 
-class SplashViewModel(
-    private val userRepository: UserRepository,
+class OnboardingViewModel(
     private val prefRepository: PrefRepository
-) : ViewModel() {
-    fun isLogin() = userRepository.isLoggedIn()
+): ViewModel() {
     fun isFirstRun() = prefRepository.isFirstRun()
     fun setFirstRun(isFirstRun: Boolean) = prefRepository.setFirstRun(isFirstRun)
 }
