@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.ActivityLoginBinding
 import com.cryptoapp.project_cryptoapp.databinding.LayoutDialogBinding
+import com.cryptoapp.project_cryptoapp.databinding.LayoutDialogFailedBinding
 import com.cryptoapp.project_cryptoapp.presentation.main.MainActivity
 import com.cryptoapp.project_cryptoapp.presentation.register.RegisterActivity
 import com.cryptoapp.project_cryptoapp.utils.hideKeyboard
@@ -31,6 +32,22 @@ class LoginActivity : AppCompatActivity() {
         setClickListeners()
     }
 
+    private fun setClickListeners() {
+        binding.btnLogin.setOnClickListener {
+            doLogin()
+        }
+        binding.tvNavToRegister.setOnClickListener {
+            navigateToRegister()
+        }
+        binding.tvForgotPassword.setOnClickListener {
+            setupInputRequest()
+        }
+        binding.btnSend.setOnClickListener {
+            doSendRequest()
+            hideKeyboard()
+        }
+    }
+
     private fun proceedLogin(
         email: String,
         password: String,
@@ -45,11 +62,8 @@ class LoginActivity : AppCompatActivity() {
                 doOnError = {
                     binding.pbLoadingLogin.isVisible = false
                     binding.btnLogin.isVisible = true
-                    Toast.makeText(
-                        this,
-                        "Login Failed : ${it.exception?.message.orEmpty()}",
-                        Toast.LENGTH_SHORT,
-                    ).show()
+                    dialogFailLogin(this)
+                    setupInputLogin()
                 },
                 doOnLoading = {
                     binding.pbLoadingLogin.isVisible = true
@@ -67,20 +81,12 @@ class LoginActivity : AppCompatActivity() {
         )
     }
 
-    private fun setClickListeners() {
-        binding.btnLogin.setOnClickListener {
-            doLogin()
-        }
-        binding.tvNavToRegister.setOnClickListener {
-            navigateToRegister()
-        }
-        binding.tvForgotPassword.setOnClickListener {
-            setupInputRequest()
-        }
-        binding.btnSend.setOnClickListener {
-            doSendRequest()
-            hideKeyboard()
-        }
+    private fun navigateToRegister() {
+        startActivity(
+            Intent(this, RegisterActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            },
+        )
     }
 
     private fun doSendRequest() {
@@ -113,6 +119,19 @@ class LoginActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun dialogFailLogin(context: Context) {
+        val dialogBinding = LayoutDialogFailedBinding.inflate(LayoutInflater.from(context))
+        val alertDialogBuilder = AlertDialog.Builder(context)
+        alertDialogBuilder.setView(dialogBinding.root)
+        val dialog = alertDialogBuilder.create()
+        dialogBinding.btnOkay.setOnClickListener {
+            dialog.dismiss()
+            setupInputLogin()
+            hideKeyboard()
+        }
+        dialog.show()
+    }
+
     private fun setupInputLogin() {
         binding.tvLoginTitle.isVisible = true
         binding.tvSendRequestTitle.isVisible = false
@@ -123,6 +142,7 @@ class LoginActivity : AppCompatActivity() {
         binding.tvForgotPassword.isVisible = true
         binding.flNavToRegister.isVisible = true
         binding.etEmail.text?.clear()
+        binding.etPassword.text?.clear()
     }
 
     private fun proceedSendRequest(email: String) {
@@ -138,7 +158,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.btnLogin.isVisible = true
                     Toast.makeText(
                         this,
-                        "Reset Failed : ${it.exception?.message.orEmpty()}",
+                        "Failed to send request Email",
                         Toast.LENGTH_SHORT,
                     ).show()
                 },
@@ -149,14 +169,6 @@ class LoginActivity : AppCompatActivity() {
                 },
             )
         }
-    }
-
-    private fun navigateToRegister() {
-        startActivity(
-            Intent(this, RegisterActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
-            },
-        )
     }
 
     private fun doLogin() {
