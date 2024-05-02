@@ -48,4 +48,11 @@
     <string name="text_coin_name">Crypto Name</string>
     <string name="text_coin_price">10000.0</string>
     <string name="desc_iv_favorite">icon star iv_favorite</string>
+    <string name="text_confirm_reset">Do you want to reset your password?</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_reset">Okay</string>
+    <string name="text_reset_success">Email has been sent,\nplease check your email</string>
+    <string name="text_send_request_to_your_email">Send Request to Your Email</string>
+    <string name="text_enter_the_email">Enter the email to change your password</string>
+    <string name="text_send">Send</string>
 </resources>

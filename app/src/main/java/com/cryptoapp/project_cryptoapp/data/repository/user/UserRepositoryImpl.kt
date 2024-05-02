@@ -38,8 +38,8 @@ class UserRepositoryImpl(private val dataSource: AuthDataSource) : UserRepositor
         }
     }
 
-    override fun requestChangePasswordByEmail(): Boolean {
-        return dataSource.requestChangePasswordByEmail()
+    override fun requestChangePasswordByEmail(email: String): Flow<ResultWrapper<Boolean>> {
+        return proceedFlow { dataSource.requestChangePasswordByEmail(email) }
     }
 
     override fun doLogout(): Boolean {

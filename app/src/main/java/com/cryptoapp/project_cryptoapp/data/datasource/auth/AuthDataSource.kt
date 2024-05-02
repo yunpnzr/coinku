@@ -20,7 +20,7 @@ interface AuthDataSource {
 
     suspend fun updatePassword(newPassword: String): Boolean
 
-    fun requestChangePasswordByEmail(): Boolean
+    fun requestChangePasswordByEmail(email: String): Boolean
 
     fun doLogout(): Boolean
 
