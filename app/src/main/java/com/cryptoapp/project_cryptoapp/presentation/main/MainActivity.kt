@@ -1,11 +1,13 @@
 package com.cryptoapp.project_cryptoapp.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.ActivityMainBinding
+import com.cryptoapp.project_cryptoapp.presentation.login.LoginActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -38,8 +40,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToLogin() {
-//        startActivity(Intent(this, LoginActivity::class.java).apply {
-//            flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
-//        })
+        startActivity(
+            Intent(this, LoginActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            },
+        )
     }
 }

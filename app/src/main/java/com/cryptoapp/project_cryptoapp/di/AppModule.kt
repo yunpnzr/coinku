@@ -16,6 +16,7 @@ import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServices
 import com.cryptoapp.project_cryptoapp.data.source.firebase.FirebaseServicesImpl
 import com.cryptoapp.project_cryptoapp.data.source.network.service.ApiService
 import com.cryptoapp.project_cryptoapp.presentation.detailcrypto.DetailCryptoViewModel
+import com.cryptoapp.project_cryptoapp.presentation.favorite.FavoriteViewModel
 import com.cryptoapp.project_cryptoapp.presentation.home.HomeViewModel
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginViewModel
 import com.cryptoapp.project_cryptoapp.presentation.main.MainViewModel
@@ -78,6 +79,7 @@ object AppModule {
             viewModelOf(::RegisterViewModel)
             viewModelOf(::LoginViewModel)
             viewModelOf(::SplashViewModel)
+            viewModelOf(::FavoriteViewModel)
             viewModel { params ->
                 DetailCryptoViewModel(
                     intent = params.get(),
