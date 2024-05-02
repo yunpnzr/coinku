@@ -22,7 +22,7 @@ interface UserRepository {
 
     fun updatePassword(newPassword: String): Flow<ResultWrapper<Boolean>>
 
-    fun requestChangePasswordByEmail(): Boolean
+    fun requestChangePasswordByEmail(email: String): Flow<ResultWrapper<Boolean>>
 
     fun doLogout(): Boolean
 

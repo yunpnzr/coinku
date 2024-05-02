@@ -20,6 +20,7 @@ import com.cryptoapp.project_cryptoapp.presentation.home.HomeViewModel
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginViewModel
 import com.cryptoapp.project_cryptoapp.presentation.main.MainViewModel
 import com.cryptoapp.project_cryptoapp.presentation.register.RegisterViewModel
+import com.cryptoapp.project_cryptoapp.presentation.splash.SplashViewModel
 import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.androidx.viewmodel.dsl.viewModelOf
@@ -76,6 +77,7 @@ object AppModule {
             viewModelOf(::HomeViewModel)
             viewModelOf(::RegisterViewModel)
             viewModelOf(::LoginViewModel)
+            viewModelOf(::SplashViewModel)
             viewModel { params ->
                 DetailCryptoViewModel(
                     intent = params.get(),

@@ -44,10 +44,8 @@ class FirebaseServicesImpl(private val firebaseAuth: FirebaseAuth) : FirebaseSer
         return true
     }
 
-    override fun requestChangePasswordByEmail(): Boolean {
-        getCurrentUser()?.email?.let {
-            firebaseAuth.sendPasswordResetEmail(it)
-        }
+    override fun requestChangePasswordByEmail(email: String): Boolean {
+        firebaseAuth.sendPasswordResetEmail(email)
         return true
     }
 
