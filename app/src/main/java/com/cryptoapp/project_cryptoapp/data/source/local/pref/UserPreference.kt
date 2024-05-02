@@ -6,6 +6,7 @@ import com.cryptoapp.project_cryptoapp.utils.SharedPreferenceUtils.set
 
 interface UserPreference {
     fun isFirstRun(): Boolean
+
     fun setFirstRun(isFirstRun: Boolean)
 }
 

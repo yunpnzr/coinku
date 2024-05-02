@@ -6,9 +6,11 @@ import com.cryptoapp.project_cryptoapp.data.repository.user.UserRepository
 
 class SplashViewModel(
     private val userRepository: UserRepository,
-    private val prefRepository: PrefRepository
+    private val prefRepository: PrefRepository,
 ) : ViewModel() {
     fun isLogin() = userRepository.isLoggedIn()
+
     fun isFirstRun() = prefRepository.isFirstRun()
+
     fun setFirstRun(isFirstRun: Boolean) = prefRepository.setFirstRun(isFirstRun)
 }

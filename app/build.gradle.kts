@@ -118,7 +118,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.crashlytics)
 
-    //local
+    // local
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
