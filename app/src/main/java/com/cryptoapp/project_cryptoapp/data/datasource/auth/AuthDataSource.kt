@@ -22,6 +22,8 @@ interface AuthDataSource {
 
     fun requestChangePasswordByEmail(email: String): Boolean
 
+    fun requestChangePassword(): Boolean
+
     fun doLogout(): Boolean
 
     fun isLoggedIn(): Boolean

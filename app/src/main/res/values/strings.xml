@@ -59,4 +59,12 @@
     <string name="text_enter_the_email">Enter the email to change your password</string>
     <string name="text_send">Send</string>
     <string name="text_login_failed">Login failed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="no">No</string>
+    <string name="change_password_alert">You can check inbox email or spam for change password right now</string>
+    <string name="account_identity_confirm">Are you serious about changing your account identity?</string>
+    <string name="change_name_success">Change name success</string>
+    <string name="change_name_failed">Change name failed</string>
 </resources>

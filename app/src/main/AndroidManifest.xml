@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.profile.edit.EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -31,14 +34,15 @@
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="false" />
-        <activity android:name=".presentation.detailcrypto.DetailCryptoActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".presentation.detailcrypto.DetailCryptoActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.onboarding.OnboardingActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
