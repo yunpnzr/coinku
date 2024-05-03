@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.FragmentProfileBinding
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginActivity
 import com.cryptoapp.project_cryptoapp.presentation.profile.edit.EditProfileActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment() {
@@ -60,19 +60,14 @@ class ProfileFragment : Fragment() {
     }
 
     private fun doLogout() {
-        val dialog =
-            AlertDialog.Builder(requireContext()).setMessage(getString(R.string.are_you_sure))
-                .setPositiveButton(
-                    getString(R.string.yes),
-                ) { _, _ ->
-                    profileViewModel.doLogout()
-                    navigateToLogin()
-                }
-                .setNegativeButton(
-                    getString(R.string.no),
-                ) { _, _ ->
-                }.create()
-        dialog.show()
+        MaterialAlertDialogBuilder(requireContext())
+            .setMessage(getString(R.string.are_you_sure))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                profileViewModel.doLogout()
+                navigateToLogin()
+            }
+            .setNegativeButton(getString(R.string.no), null)
+            .show()
     }
 
     private fun navigateToLogin() {
