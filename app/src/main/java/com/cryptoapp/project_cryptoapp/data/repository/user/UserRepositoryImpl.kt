@@ -42,6 +42,10 @@ class UserRepositoryImpl(private val dataSource: AuthDataSource) : UserRepositor
         return proceedFlow { dataSource.requestChangePasswordByEmail(email) }
     }
 
+    override fun requestChangePassword(): Boolean {
+        return dataSource.requestChangePassword()
+    }
+
     override fun doLogout(): Boolean {
         return dataSource.doLogout()
     }

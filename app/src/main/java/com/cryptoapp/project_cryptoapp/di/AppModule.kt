@@ -28,6 +28,8 @@ import com.cryptoapp.project_cryptoapp.presentation.home.HomeViewModel
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginViewModel
 import com.cryptoapp.project_cryptoapp.presentation.main.MainViewModel
 import com.cryptoapp.project_cryptoapp.presentation.onboarding.OnboardingViewModel
+import com.cryptoapp.project_cryptoapp.presentation.profile.ProfileViewModel
+import com.cryptoapp.project_cryptoapp.presentation.profile.edit.EditProfileViewModel
 import com.cryptoapp.project_cryptoapp.presentation.register.RegisterViewModel
 import com.cryptoapp.project_cryptoapp.presentation.splash.SplashViewModel
 import com.cryptoapp.project_cryptoapp.utils.SharedPreferenceUtils
@@ -107,6 +109,8 @@ object AppModule {
             viewModelOf(::SplashViewModel)
             viewModelOf(::FavoriteViewModel)
             viewModelOf(::OnboardingViewModel)
+            viewModelOf(::EditProfileViewModel)
+            viewModelOf(::ProfileViewModel)
             viewModel { params ->
                 DetailCryptoViewModel(
                     intent = params.get(),

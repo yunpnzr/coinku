@@ -77,10 +77,9 @@ class OnboardingActivity : AppIntro() {
     }
 
     private fun checkAuth() {
-        if (onboardingViewModel.isLogin())
-            {
-                navigateToMain()
-            } else {
+        if (onboardingViewModel.isLogin()) {
+            navigateToMain()
+        } else {
             navigateToLogin()
         }
     }

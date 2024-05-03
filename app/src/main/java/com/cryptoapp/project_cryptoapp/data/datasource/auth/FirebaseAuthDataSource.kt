@@ -32,6 +32,10 @@ class FirebaseAuthDataSource(private val services: FirebaseServices) : AuthDataS
         return services.requestChangePasswordByEmail(email)
     }
 
+    override fun requestChangePassword(): Boolean {
+        return services.requestChangePassword()
+    }
+
     override fun doLogout(): Boolean {
         return services.doLogout()
     }

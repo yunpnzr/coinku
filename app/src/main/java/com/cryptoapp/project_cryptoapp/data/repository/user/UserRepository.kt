@@ -24,6 +24,8 @@ interface UserRepository {
 
     fun requestChangePasswordByEmail(email: String): Flow<ResultWrapper<Boolean>>
 
+    fun requestChangePassword(): Boolean
+
     fun doLogout(): Boolean
 
     fun isLoggedIn(): Boolean
