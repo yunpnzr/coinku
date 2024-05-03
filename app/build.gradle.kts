@@ -136,4 +136,7 @@ dependencies {
 
     // app intro
     implementation(libs.app.intro)
+
+    // chip nav
+    implementation(libs.chip.nav)
 }

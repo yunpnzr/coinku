@@ -68,7 +68,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/cv_container_coin_image"
             app:layout_constraintBottom_toBottomOf="@id/cv_container_coin_image"
-            android:src="@drawable/ic_star"
+            android:src="@drawable/ic_tab_fav"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/desc_iv_favorite" />
 
