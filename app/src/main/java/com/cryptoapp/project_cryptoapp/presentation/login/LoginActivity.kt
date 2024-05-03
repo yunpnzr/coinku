@@ -158,7 +158,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.btnLogin.isVisible = true
                     Toast.makeText(
                         this,
-                        "Failed to send request Email",
+                        getString(R.string.failed_to_send_request_email),
                         Toast.LENGTH_SHORT,
                     ).show()
                 },

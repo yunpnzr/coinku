@@ -8,7 +8,7 @@
     android:paddingVertical="16dp">
 
     <ImageView
-        android:id="@+id/ic_email"
+        android:id="@+id/iv_register_failed"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
@@ -16,7 +16,7 @@
         android:src="@drawable/ic_failed" />
 
     <TextView
-        android:id="@+id/tv_dialog_message"
+        android:id="@+id/tv_register_failed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -26,7 +26,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btn_okay"
+        android:id="@+id/btn_register_failed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
