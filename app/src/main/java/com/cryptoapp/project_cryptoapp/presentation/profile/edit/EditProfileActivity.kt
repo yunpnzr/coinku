@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.ActivityEditProfileBinding
 import com.cryptoapp.project_cryptoapp.utils.proceedWhen
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EditProfileActivity : AppCompatActivity() {
@@ -21,6 +22,11 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // button back
+        binding.ivBackEditProfile.setOnClickListener {
+            onBackPressed()
+        }
+
         showUser()
         setClickListener()
     }
@@ -31,18 +37,15 @@ class EditProfileActivity : AppCompatActivity() {
             changePasswordRequest()
         }
         binding.btnConfirmEditProfile.setOnClickListener {
-            val dialog =
-                AlertDialog.Builder(this).setMessage(getString(R.string.account_identity_confirm))
-                    .setPositiveButton(
-                        getString(R.string.yes),
-                    ) { _, _ ->
-                        doChangeProfile()
-                    }
-                    .setNegativeButton(
-                        getString(R.string.no),
-                    ) { _, _ ->
-                    }.create()
-            dialog.show()
+            MaterialAlertDialogBuilder(this)
+                .setMessage(getString(R.string.account_identity_confirm))
+                .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                    doChangeProfile()
+                }
+                .setNegativeButton(getString(R.string.no)) { _, _ ->
+                }
+                .create()
+                .show()
         }
     }
 
