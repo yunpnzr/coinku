@@ -23,7 +23,6 @@ import com.cryptoapp.project_cryptoapp.data.source.local.pref.UserPreference
 import com.cryptoapp.project_cryptoapp.data.source.local.pref.UserPreferenceImpl
 import com.cryptoapp.project_cryptoapp.data.source.network.service.ApiService
 import com.cryptoapp.project_cryptoapp.presentation.detailcrypto.DetailCryptoViewModel
-import com.cryptoapp.project_cryptoapp.presentation.favorite.FavoriteViewModel
 import com.cryptoapp.project_cryptoapp.presentation.home.HomeViewModel
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginViewModel
 import com.cryptoapp.project_cryptoapp.presentation.main.MainViewModel
@@ -107,7 +106,6 @@ object AppModule {
             viewModelOf(::RegisterViewModel)
             viewModelOf(::LoginViewModel)
             viewModelOf(::SplashViewModel)
-            viewModelOf(::FavoriteViewModel)
             viewModelOf(::OnboardingViewModel)
             viewModelOf(::EditProfileViewModel)
             viewModelOf(::ProfileViewModel)
