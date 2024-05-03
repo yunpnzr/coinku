@@ -41,15 +41,16 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        setUserName()
+        setBannerContent()
         setupMenu()
         getListCrypto("idr")
     }
 
-    private fun setUserName() {
+    private fun setBannerContent() {
         val username =
             if (homeViewModel.isLoggedIn()) homeViewModel.getCurrentUser()?.name else "Guest"
         binding.layoutBanner.tvTitleBanner.text = getString(R.string.hi_username, username)
+        binding.layoutBanner.tvDescBanner.text = getString(R.string.banner_desc)
     }
 
     private fun setupMenu() {
