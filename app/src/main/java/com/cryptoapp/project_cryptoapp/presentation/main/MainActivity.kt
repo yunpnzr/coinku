@@ -40,12 +40,6 @@ class MainActivity : AppCompatActivity() {
                     openMainFragment()
                 }
 
-                /*R.id.menu_tab_favorite -> {
-                    val favoriteFragment = FavoriteFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.frag_container_nav, favoriteFragment).commit()
-                }*/
-
                 R.id.menu_tab_profile -> {
                     val profileFragment = ProfileFragment()
                     supportFragmentManager.beginTransaction()
