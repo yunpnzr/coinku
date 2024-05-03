@@ -11,11 +11,11 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
     </fragment>
-    <fragment
+<!--    <fragment
         android:id="@+id/menu_tab_favorite"
         android:name="com.cryptoapp.project_cryptoapp.presentation.favorite.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" />-->
     <fragment
         android:id="@+id/menu_tab_profile"
         android:name="com.cryptoapp.project_cryptoapp.presentation.profile.ProfileFragment"

@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.ActivityMainBinding
-import com.cryptoapp.project_cryptoapp.presentation.favorite.FavoriteFragment
 import com.cryptoapp.project_cryptoapp.presentation.home.HomeFragment
 import com.cryptoapp.project_cryptoapp.presentation.profile.ProfileFragment
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
@@ -41,11 +40,11 @@ class MainActivity : AppCompatActivity() {
                     openMainFragment()
                 }
 
-                R.id.menu_tab_favorite -> {
+                /*R.id.menu_tab_favorite -> {
                     val favoriteFragment = FavoriteFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frag_container_nav, favoriteFragment).commit()
-                }
+                }*/
 
                 R.id.menu_tab_profile -> {
                     val profileFragment = ProfileFragment()
