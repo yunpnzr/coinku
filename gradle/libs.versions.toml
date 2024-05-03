@@ -35,6 +35,8 @@ ktlint = "12.1.0"
 
 appIntro = "6.3.1"
 
+chipnav = "1.4.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -84,6 +86,9 @@ koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = 
 
 #AppIntro
 app-intro = {group = "com.github.AppIntro", name = "AppIntro", version.ref = "appIntro"}
+
+#chipnav
+chip-nav = {group = "com.github.ismaeldivita", name = "chip-navigation-bar", version.ref = "chipnav"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

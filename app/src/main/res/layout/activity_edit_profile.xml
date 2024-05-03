@@ -72,8 +72,7 @@
             android:enabled="true"
             android:hint="@string/hint_name_register"
             android:inputType="text"
-            android:padding="16dp"
-            android:textColor="?attr/colorPrimary" />
+            android:padding="16dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -93,7 +92,6 @@
             android:layout_height="match_parent"
             android:ems="10"
             android:enabled="false"
-            android:textColor="?attr/colorPrimary"
             android:hint="@string/hint_email_register"
             android:inputType="textEmailAddress"
             android:padding="16dp" />
