@@ -1,13 +1,17 @@
 package com.cryptoapp.project_cryptoapp.presentation.register
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
-import androidx.appcompat.app.AlertDialog
+import android.view.ViewGroup
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.cryptoapp.project_cryptoapp.R
 import com.cryptoapp.project_cryptoapp.databinding.ActivityRegisterBinding
+import com.cryptoapp.project_cryptoapp.databinding.LayoutDialogRegisterFailedBinding
+import com.cryptoapp.project_cryptoapp.databinding.LayoutDialogRegisterSuccessBinding
 import com.cryptoapp.project_cryptoapp.presentation.login.LoginActivity
 import com.cryptoapp.project_cryptoapp.utils.proceedWhen
 import com.google.android.material.textfield.TextInputLayout
@@ -64,12 +68,13 @@ class RegisterActivity : AppCompatActivity() {
                 doOnSuccess = {
                     binding.layoutInputRegister.pbRegister.isVisible = false
                     binding.layoutInputRegister.btnRegister.isEnabled = true
-                    val dialog =
+                    /*val dialog =
                         AlertDialog.Builder(this).setMessage(getString(R.string.registration_success))
                             .setPositiveButton(getString(R.string.yes)) { _, _ ->
                                 navigateToLogin()
                             }
-                    dialog.show()
+                    dialog.show()*/
+                    showDialogSuccess()
                 },
                 doOnLoading = {
                     binding.layoutInputRegister.pbRegister.isVisible = true
@@ -78,14 +83,48 @@ class RegisterActivity : AppCompatActivity() {
                 doOnError = {
                     binding.layoutInputRegister.pbRegister.isVisible = false
                     binding.layoutInputRegister.btnRegister.isEnabled = true
-                    val dialog =
+                    /*val dialog =
                         AlertDialog.Builder(this).setMessage(getString(R.string.registration_failed))
                             .setPositiveButton(getString(R.string.yes)) { _, _ ->
                             }
-                    dialog.show()
+                    dialog.show()*/
+                    showDialogFailed()
                 },
             )
         }
+    }
+
+    private fun showDialogFailed() {
+        val dialogBinding = LayoutDialogRegisterFailedBinding.inflate(layoutInflater)
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(dialogBinding.root)
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+        )
+        dialogBinding.btnRegisterFailed.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    private fun showDialogSuccess() {
+        val dialogBinding = LayoutDialogRegisterSuccessBinding.inflate(layoutInflater)
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(dialogBinding.root)
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+        )
+        dialogBinding.btnRegisterSuccess.setOnClickListener {
+            dialog.dismiss()
+            navigateToLogin()
+        }
+        dialog.show()
     }
 
     private fun isFormValid(): Boolean {
